@@ -7,7 +7,7 @@ export {
 		ts:		time &log &optional;
 		uid:	        string &log &optional;
 		id:		conn_id &log &optional;
-		protocol:	string &log &optional;
+		service:	string &log &optional;
 		flame_type: 	string &log &optional;
 		pdu_type:       string &log &optional;
 		cmd:		string &log &optional;
@@ -20,7 +20,7 @@ export {
 	type AggregationData: record {
 		uid:	        string &log &optional;
 		id:		conn_id &log &optional;
-		protocol:	string &log &optional;
+		service:	string &log &optional;
 		flame_type: 	string &log &optional;
 		pdu_type:       string &log &optional;
 		cmd:		string &log &optional;
@@ -38,7 +38,7 @@ export {
 	info_insert$ts = res_aggregationData[idx]$ts_s;
 	info_insert$uid = idx$uid;
 	info_insert$id = idx$id;
-	info_insert$protocol = idx$protocol;
+	info_insert$service = idx$service;
 	info_insert$flame_type = idx$flame_type;
 	info_insert$pdu_type = idx$pdu_type;
 	info_insert$cmd = idx$cmd;
@@ -74,7 +74,7 @@ function create_aggregationData(info: Info): AggregationData
 	local aggregationData: AggregationData;
 	aggregationData$uid= info$uid;
 	aggregationData$id = info$id;
-	aggregationData$protocol = info$protocol;
+	aggregationData$service = info$service;
 	aggregationData$flame_type = info$flame_type;
 	aggregationData$pdu_type = info$pdu_type;
 	aggregationData$cmd = info$cmd;
@@ -103,7 +103,7 @@ event tsn_slmp::reqLMT(c: connection, command: string, subcommand: string)
 	info$ts = network_time();
 	info$uid = c$uid;
 	info$id  = c$id;
-	info$protocol = "cclink_ie_tsn";
+	info$service = "cclink_ie_tsn";
 	info$flame_type = "ip";
 	info$pdu_type = "";
 	info$cmd = "";
@@ -180,7 +180,7 @@ event tsn_slmp::resLMT(c: connection, command: string, subcommand: string)
 	info$ts = network_time();
 	info$uid = c$uid;
 	info$id  = c$id;
-	info$protocol = "cclink_ie_tsn";
+	info$service = "cclink_ie_tsn";
 	info$flame_type = "ip";
 	info$pdu_type = "";
 	info$cmd = "";
@@ -231,7 +231,7 @@ event zeek_done()
 		info$ts = res_aggregationData[i]$ts_s;
 		info$uid = i$uid;
 		info$id = i$id;
-		info$protocol = i$protocol;
+		info$service = i$service;
 		info$flame_type = i$flame_type;
 		info$pdu_type = i$pdu_type;
 		info$cmd = i$cmd;
