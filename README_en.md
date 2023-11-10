@@ -74,7 +74,7 @@ This plug-in monitors all functions of IP frame in CC-Link IE TSN and outputs th
 | id.orig_p | port | source port number |
 | id.resp_h | addr | destination IP address  |
 | id.resp_p | port | destination port number   |
-| protocol | string | protocol name |
+| service | string | protocol name |
 | flame_type | string | data frame name |
 | pdu_type | string | protocol function name |
 | cmd | string | specification of operations for the station with command and subcommand |
@@ -89,7 +89,7 @@ An example of `cclink-ie-tsn-slmp.log` is as follows:
 #unset_field	-
 #path	cclink-ie-tsn-slmp
 #open	2023-11-08-08-01-46
-#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	protocol	flame_type	pdu_type	cmd	number	ts_end
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	service	flame_type	pdu_type	cmd	number	ts_end
 #types	time	string	addr	port	addr	port	string	string	string	string	int	time
 1695784130.196558	CeiMXE22eYUYMBHZsj	10.0.0.1	45238	10.0.0.2	45238	cclink_ie_tsn	ip	slmp-notification	ResNotification	10	1695784186.147303
 1695784131.117451	CeiMXE22eYUYMBHZsj	10.0.0.1	45238	10.0.0.2	45238	cclink_ie_tsn	ip	slmp-networkConfigTslt	ReqNetworkConfigTslt	10	1695784187.077320
