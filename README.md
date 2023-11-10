@@ -81,7 +81,7 @@ spicyc v1.5.0 (d0bc6053)
 | id.orig_p | port | 送信元ポート番号 |
 | id.resp_h | addr | 宛先IPアドレス |
 | id.resp_p | port | 宛先ポート番号 |
-| protocol | string | プロトコル名 |
+| service | string | プロトコル名 |
 | flame_type | string | データフレームの名前 |
 | pdu_type | string | プロトコルの関数名 |
 | cmd | string | コマンド、サブコマンドにより局に対する操作を指定する |
@@ -97,7 +97,7 @@ spicyc v1.5.0 (d0bc6053)
 #unset_field	-
 #path	cclink-ie-tsn-slmp
 #open	2023-11-08-08-01-46
-#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	protocol	flame_type	pdu_type	cmd	number	ts_end
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	service	flame_type	pdu_type	cmd	number	ts_end
 #types	time	string	addr	port	addr	port	string	string	string	string	int	time
 1695784130.196558	CeiMXE22eYUYMBHZsj	10.0.0.1	45238	10.0.0.2	45238	cclink_ie_tsn	ip	slmp-notification	ResNotification	10	1695784186.147303
 1695784131.117451	CeiMXE22eYUYMBHZsj	10.0.0.1	45238	10.0.0.2	45238	cclink_ie_tsn	ip	slmp-networkConfigTslt	ReqNetworkConfigTslt	10	1695784187.077320
