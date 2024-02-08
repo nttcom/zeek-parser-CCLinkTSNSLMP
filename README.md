@@ -8,6 +8,16 @@ Zeek-Parser-CCLinkTSNSLMPとは[CC-Linkファミリー](https://www.cc-link.org/
 
 ## インストール
 
+### パッケージマネージャーによるインストール
+
+このプラグインは[Zeek Package Manger](https://docs.zeek.org/projects/package-manager/en/stable/index.html)用のパッケージとして提供されています。
+
+以下のコマンドを実行することで、本プラグインは利用可能になります。
+```
+zkg refresh
+zkg install zeek-parser-CCLinkTSNSLMP
+```
+
 ### マニュアルインストール
 
 本プラグインを利用する前に、Zeek, Spicyがインストールされていることを確認します。
